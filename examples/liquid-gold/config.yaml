@@ -1,0 +1,491 @@
+# Liquid Gold Animation Pipeline Configuration
+# Translated from: ~/.hermetic/brand/mascot/generate_animations.py
+#
+# All animation definitions for the Liquid Gold mascot system.
+# Shapes transform from/to a pool of liquid gold via PixelLab API.
+
+project:
+  name: "liquid-gold"
+  reference: "reference.png"
+  output_dir: "./output"
+  frame_size: 64
+  upscale_size: 512
+  frame_duration_ms: 200
+
+# ──────────────────────────────────────────────────────────────
+# Singles: liquid gold -> shape (one-step transforms)
+# 58 entries from NEW_SINGLES
+# ──────────────────────────────────────────────────────────────
+
+singles:
+  # Hermetic
+  caduceus:
+    prompt: "liquid gold transforms into the caduceus staff of Hermes with two intertwined serpents and wings at the top"
+  sun:
+    prompt: "liquid gold transforms into a radiant sun with rays extending outward, glowing golden"
+  moon:
+    prompt: "liquid gold transforms into a crescent moon shape, elegant and luminous"
+
+  # Code
+  terminal:
+    prompt: "liquid gold transforms into a terminal command prompt with a blinking cursor and angle bracket"
+  lambda:
+    prompt: "liquid gold transforms into the greek letter lambda symbol, clean geometric shape"
+
+  # Mixed
+  lotus:
+    prompt: "liquid gold transforms into an open lotus flower with layered petals, symmetrical"
+
+  # Gamer / Pop Culture
+  pikachu:
+    prompt: "liquid gold transforms into the silhouette of Pikachu from Pokemon, with pointy ears and lightning bolt tail"
+  mushroom:
+    prompt: "liquid gold transforms into a Super Mario power-up mushroom with spots on the cap"
+  sword:
+    prompt: "liquid gold transforms into a pixel art sword, classic RPG weapon standing upright"
+  triforce:
+    prompt: "liquid gold transforms into the Triforce symbol from Zelda, three golden triangles"
+
+  # Brand Identity
+  crown:
+    prompt: "liquid gold transforms into a royal crown with five pointed triangles rising upward, golden and majestic"
+  phoenix:
+    prompt: "liquid gold transforms into a phoenix bird rising with flaming wings spread wide, rebirth from fire"
+  lion:
+    prompt: "liquid gold transforms into a lion head with a flowing mane, facing forward, powerful and noble"
+
+  # Metamorphosis
+  butterfly:
+    prompt: "liquid gold transforms into a butterfly with open symmetrical wings, delicate and graceful"
+  spiral:
+    prompt: "liquid gold transforms into a golden ratio spiral, a perfect logarithmic spiral curving outward"
+  seed:
+    prompt: "liquid gold transforms into a seed sprouting with a small stem and two leaves emerging upward"
+
+  # Mediator
+  bridge:
+    prompt: "liquid gold transforms into an arched bridge spanning across, connecting two sides"
+  compass:
+    prompt: "liquid gold transforms into a compass rose with four cardinal points, a navigation symbol"
+  book:
+    prompt: "liquid gold transforms into an open book with visible pages fanning out, knowledge symbol"
+
+  # Custom
+  golden_ratio:
+    prompt: "liquid gold transforms into the golden ratio phi symbol with a spiral overlay, mathematical beauty"
+  portal:
+    prompt: "liquid gold transforms into a swirling green portal circle with energy radiating from its edges, interdimensional gateway"
+  ant:
+    prompt: "liquid gold transforms into a small ant carrying something, industrious and determined"
+  bee:
+    prompt: "liquid gold transforms into a honeybee with visible wings and striped body, sacred geometry worker"
+  keyboard:
+    prompt: "liquid gold transforms into a computer keyboard viewed from above, rectangular with visible keys"
+  mouse:
+    prompt: "liquid gold transforms into a computer mouse with a scroll wheel and two buttons, sleek design"
+  satellite:
+    prompt: "liquid gold transforms into a satellite dish or orbiting satellite with solar panels extended"
+
+  # Pokemon
+  mew:
+    prompt: "liquid gold transforms into the silhouette of Mew from Pokemon, the psychic cat floating with a long curving tail"
+
+  # Legend of Zelda
+  master_sword:
+    prompt: "liquid gold transforms into the Master Sword from Zelda, a legendary blade with a blue hilt embedded in a pedestal"
+  hylian_shield:
+    prompt: "liquid gold transforms into the Hylian Shield from Zelda, a decorated kite shield with a red bird emblem"
+  ocarina:
+    prompt: "liquid gold transforms into an ocarina musical instrument, the Ocarina of Time, small oval shape with holes"
+  rupee:
+    prompt: "liquid gold transforms into a green rupee gem from Zelda, a hexagonal gemstone standing upright"
+  heart_container:
+    prompt: "liquid gold transforms into a heart container from Zelda, a glowing red heart with a golden outline"
+
+  # Classic Gaming
+  n64:
+    prompt: "liquid gold transforms into a Nintendo 64 console with its distinctive angular shape and controller ports"
+  gameboy:
+    prompt: "liquid gold transforms into a Game Boy handheld console with a screen and d-pad buttons"
+  pacman:
+    prompt: "liquid gold transforms into Pac-Man, the iconic yellow circle with a mouth wedge open"
+  space_invader:
+    prompt: "liquid gold transforms into a Space Invaders alien, the classic pixelated squid shape with arms"
+  tetris:
+    prompt: "liquid gold transforms into a Tetris T-piece block, the iconic falling puzzle piece"
+
+  # Avatar: The Last Airbender
+  aang_water:
+    prompt: "liquid gold transforms into a figure in martial arts stance bending a wave of water, Avatar style waterbending"
+  aang_earth:
+    prompt: "liquid gold transforms into a figure in a strong stance lifting rocks from the ground, Avatar style earthbending"
+  aang_fire:
+    prompt: "liquid gold transforms into a figure punching forward with flames shooting from fists, Avatar style firebending"
+  aang_air:
+    prompt: "liquid gold transforms into a bald monk figure with an arrow on head spinning a ball of air between hands, Avatar airbending"
+  appa:
+    prompt: "liquid gold transforms into Appa the flying sky bison from Avatar with six legs and a large flat tail, flying through the air"
+  aang_iceberg:
+    prompt: "liquid gold transforms into a figure curled up inside a glowing sphere of ice, frozen in an iceberg, Avatar style"
+
+# ──────────────────────────────────────────────────────────────
+# Emotes: shape-specific idle/action animations
+# Uses the final frame of a single transform as reference,
+# then generates 16 new frames of the shape performing its emote.
+# ──────────────────────────────────────────────────────────────
+
+emotes:
+  # Original 17
+  swan:
+    prompt: "this exact golden swan stays in place, very subtle idle animation, only the neck sways slightly left then right, everything else stays exactly the same"
+  flame:
+    prompt: "this exact golden flame stays in place, very subtle idle animation, only the tip of the flame gently sways left and right, the base stays completely still"
+  saturn:
+    prompt: "a golden pixel art planet Saturn slowly rotates, its rings tilting and shimmering"
+  mercury:
+    prompt: "a golden pixel art Mercury symbol pulses with energy, the circle expanding and contracting"
+  cube:
+    prompt: "this exact golden cube stays in place, very subtle idle animation, only a faint shimmer moves across its surface, the shape does not move or rotate"
+  braces:
+    prompt: "golden pixel art curly braces pulse open and closed, as if breathing code"
+  cursor:
+    prompt: "this exact golden text cursor stays in place, very subtle idle animation, only gently pulses brighter then dimmer, the shape stays exactly the same"
+  branch:
+    prompt: "this exact golden git branch stays in place, very subtle idle animation, only a faint glow pulses along the branch lines, nothing moves or changes shape"
+  tags:
+    prompt: "golden pixel art HTML tags pulse and glow, angle brackets opening and closing"
+  eye:
+    prompt: "a golden pixel art eye of providence blinks slowly, the iris contracting then expanding"
+  ouroboros:
+    prompt: "a golden pixel art ouroboros serpent slithers forward, its body undulating in a circle"
+  heart:
+    prompt: "this exact golden heart stays in place, very subtle idle animation, only gently pulses brighter then dimmer like a slow heartbeat, the shape stays exactly the same size"
+  key:
+    prompt: "a golden pixel art key turns slowly as if unlocking something, rotating clockwise"
+  star:
+    prompt: "a golden pixel art star twinkles and shimmers, its points glowing brighter then dimmer"
+
+  # Hermetic
+  caduceus:
+    prompt: "a golden pixel art caduceus staff glows as the two serpents slither upward along it"
+  sun:
+    prompt: "a golden pixel art sun pulses with radiance, its rays extending outward then retracting"
+  moon:
+    prompt: "a golden pixel art crescent moon gently rocks side to side, glowing softly"
+
+  # Code
+  terminal:
+    prompt: "a golden pixel art terminal cursor blinks while characters appear one by one on screen"
+  lambda:
+    prompt: "a golden pixel art lambda symbol rotates and pulses with mathematical energy"
+
+  # Mixed
+  lotus:
+    prompt: "a golden pixel art lotus flower gently opens its petals wider then closes slightly, breathing"
+
+  # Gamer
+  pikachu:
+    prompt: "a golden pixel art Pikachu does a small jump and sparks electricity from its cheeks"
+  mushroom:
+    prompt: "a golden pixel art Mario mushroom bounces up and down with a slight squish on landing"
+  sword:
+    prompt: "this exact golden sword stays in place, very subtle idle animation, only a faint gleam of light slowly travels up the blade, the sword does not move"
+  triforce:
+    prompt: "a golden pixel art Triforce glows as each triangle illuminates one at a time in sequence"
+
+  # Brand Identity
+  crown:
+    prompt: "a golden pixel art crown gleams as each point lights up in sequence from left to right"
+  phoenix:
+    prompt: "this exact golden phoenix stays in place, very subtle idle animation, only a faint shimmer ripples through the wing feathers, the pose stays exactly the same"
+  lion:
+    prompt: "a golden pixel art lion head shakes its mane majestically, mouth opening in a silent roar"
+
+  # Metamorphosis
+  butterfly:
+    prompt: "a golden pixel art butterfly gently flaps its wings open and closed, floating slightly"
+  spiral:
+    prompt: "a golden pixel art golden ratio spiral rotates slowly, tracing its mathematical curve"
+  seed:
+    prompt: "this exact golden sprouting seed stays in place, very subtle idle animation, only the tiny leaves gently sway left then right, the stem stays exactly the same"
+
+  # Mediator
+  bridge:
+    prompt: "a golden pixel art bridge glows as light travels across it from one side to the other"
+  compass:
+    prompt: "a golden pixel art compass needle spins and settles pointing north, pulsing once"
+  book:
+    prompt: "a golden pixel art open book flips its pages gently, one page turning after another"
+
+  # Custom
+  golden_ratio:
+    prompt: "a golden pixel art phi symbol traces a spiral overlay that rotates around it"
+  portal:
+    prompt: "a golden pixel art swirling portal spins faster, energy particles being pulled inward"
+  ant:
+    prompt: "a golden pixel art ant marches forward carrying a tiny golden crumb above its head"
+  bee:
+    prompt: "a golden pixel art bee hovers in place, wings buzzing rapidly, then darts to one side"
+  keyboard:
+    prompt: "a golden pixel art keyboard has keys pressing down in a wave pattern from left to right"
+  mouse:
+    prompt: "a golden pixel art computer mouse clicks its left button, a small click indicator appearing"
+  satellite:
+    prompt: "a golden pixel art satellite rotates its solar panels toward the sun, dish adjusting angle"
+
+  # Pokemon
+  mew:
+    prompt: "a golden pixel art Mew floats gently up and down, tail swaying gracefully, psychic energy shimmering"
+
+  # Legend of Zelda
+  master_sword:
+    prompt: "a golden pixel art Master Sword glows with a faint blue pulse traveling up the blade, sacred energy"
+  hylian_shield:
+    prompt: "a golden pixel art Hylian Shield shimmers as the bird emblem briefly glows brighter then fades"
+  ocarina:
+    prompt: "a golden pixel art ocarina has musical notes floating upward from its holes, one by one"
+  rupee:
+    prompt: "a golden pixel art rupee gem slowly rotates in place, catching the light on each facet"
+  heart_container:
+    prompt: "a golden pixel art heart container pulses with a warm red glow, expanding and contracting gently"
+
+  # Classic Gaming
+  n64:
+    prompt: "a golden pixel art N64 console has its power light blinking on, a faint glow emanating from controller ports"
+  gameboy:
+    prompt: "a golden pixel art Game Boy screen flickers on with pixel patterns, the power LED glowing"
+  pacman:
+    prompt: "a golden pixel art Pac-Man chomps its mouth open and closed repeatedly, classic eating animation"
+  space_invader:
+    prompt: "a golden pixel art Space Invader alien shifts its arms up and down in the classic march animation"
+  tetris:
+    prompt: "a golden pixel art Tetris piece slowly rotates through its four orientations"
+
+  # Avatar: The Last Airbender
+  aang_water:
+    prompt: "a golden pixel art waterbender figure moves fluidly, the water wave flowing back and forth in a graceful arc"
+  aang_earth:
+    prompt: "a golden pixel art earthbender figure holds steady stance, the floating rocks slowly orbiting around them"
+  aang_fire:
+    prompt: "a golden pixel art firebender figure pulses with flame, fire flickering and dancing from outstretched fists"
+  aang_air:
+    prompt: "a golden pixel art airbender figure spins the air sphere faster then slower, robes fluttering in the breeze"
+  appa:
+    prompt: "a golden pixel art Appa the sky bison gently flaps, rising and dipping as if flying through clouds"
+  aang_iceberg:
+    prompt: "a golden pixel art frozen figure in ice glows brighter then dimmer, the iceberg pulsing with inner light"
+
+# ──────────────────────────────────────────────────────────────
+# Chains: 3-step sequences (liquid -> A -> B)
+# Each chain is 2 API calls producing ~32 frames.
+# ──────────────────────────────────────────────────────────────
+
+chains:
+  chain_caduceus_to_heart:
+    label: "Hermes to Heart"
+    description: "The messenger's staff melts into the fire of the heart"
+    steps:
+      - from: liquid
+        to: caduceus
+        prompt: "liquid gold transforms into the caduceus staff of Hermes"
+      - from: caduceus
+        to: heart
+        prompt: "caduceus staff transforms and melts into a glowing heart shape"
+
+  chain_terminal_to_lotus:
+    label: "Code Blooms"
+    description: "From the terminal, beauty emerges"
+    steps:
+      - from: liquid
+        to: terminal
+        prompt: "liquid gold transforms into a terminal command prompt"
+      - from: terminal
+        to: lotus
+        prompt: "terminal prompt dissolves and transforms into an open lotus flower"
+
+  chain_sun_to_key:
+    label: "Illumination Unlocks"
+    description: "Light becomes the key that opens all doors"
+    steps:
+      - from: liquid
+        to: sun
+        prompt: "liquid gold transforms into a radiant golden sun"
+      - from: sun
+        to: key
+        prompt: "the sun compresses and reshapes into an ornate golden key"
+
+# ──────────────────────────────────────────────────────────────
+# Journeys: long chains (3-5 step sequences)
+# Each journey is N API calls producing N*16 frames.
+# ──────────────────────────────────────────────────────────────
+
+journeys:
+  journey_avatar:
+    label: "The Avatar Cycle"
+    description: "Air, water, earth, fire -- mastering all four elements"
+    steps:
+      - from: liquid
+        to: aang_air
+        prompt: "liquid gold transforms into a bald monk figure spinning a ball of air between hands"
+      - from: aang_air
+        to: aang_water
+        prompt: "the airbender dissolves into flowing water, reshaping into a waterbending stance with a wave"
+      - from: aang_water
+        to: aang_earth
+        prompt: "the water freezes and hardens into rock, a figure rising in a strong earthbending stance"
+      - from: aang_earth
+        to: aang_fire
+        prompt: "the rocks crack and ignite, a figure punching forward with flames from fists"
+
+  journey_illumination:
+    label: "Path to Illumination"
+    description: "Flame to phoenix to sun to the all-seeing eye"
+    steps:
+      - from: liquid
+        to: flame
+        prompt: "liquid gold transforms into a dancing flame"
+      - from: flame
+        to: phoenix
+        prompt: "the flame erupts into a phoenix bird rising with flaming wings spread wide"
+      - from: phoenix
+        to: sun
+        prompt: "the phoenix compresses into a radiant golden sun with rays extending outward"
+      - from: sun
+        to: eye
+        prompt: "the sun transforms into an all-seeing eye of providence, the iris glowing"
+
+  journey_code_to_consciousness:
+    label: "Code to Consciousness"
+    description: "From syntax to nature to flight -- code becomes life"
+    steps:
+      - from: liquid
+        to: braces
+        prompt: "liquid gold transforms into curly braces, the fundamental unit of code"
+      - from: braces
+        to: terminal
+        prompt: "the braces expand into a terminal command prompt with a blinking cursor"
+      - from: terminal
+        to: seed
+        prompt: "the terminal dissolves into the earth, a seed sprouting with tiny leaves"
+      - from: seed
+        to: lotus
+        prompt: "the seed grows rapidly into a blooming lotus flower with layered petals"
+      - from: lotus
+        to: butterfly
+        prompt: "the lotus petals detach and transform into butterfly wings, taking flight"
+
+  journey_hero:
+    label: "The Hero's Journey"
+    description: "Arm yourself, power up, claim the crown"
+    steps:
+      - from: liquid
+        to: sword
+        prompt: "liquid gold transforms into a pixel art sword standing upright"
+      - from: sword
+        to: mushroom
+        prompt: "the sword melts and reshapes into a Mario power-up mushroom with spots"
+      - from: mushroom
+        to: crown
+        prompt: "the mushroom stretches upward and transforms into a royal crown"
+
+  journey_hermetic:
+    label: "Hermetic Wisdom"
+    description: "Key unlocks book, book opens the eye, eye ignites the heart"
+    steps:
+      - from: liquid
+        to: key
+        prompt: "liquid gold transforms into an ornate golden key"
+      - from: key
+        to: book
+        prompt: "the key inserts and turns, transforming into an open book with visible pages"
+      - from: book
+        to: eye
+        prompt: "the book pages flutter and reshape into the eye of providence"
+      - from: eye
+        to: heart
+        prompt: "the eye softens and melts into a glowing heart shape, fire of the heart"
+
+  journey_structure_to_passion:
+    label: "Structure to Passion"
+    description: "Discipline becomes code, code becomes fire, fire becomes heart"
+    steps:
+      - from: liquid
+        to: cube
+        prompt: "liquid gold solidifies into a rigid geometric cube, perfectly symmetrical"
+      - from: cube
+        to: braces
+        prompt: "the cube cracks open and reshapes into curly braces, the symbol of code"
+      - from: braces
+        to: terminal
+        prompt: "the braces expand into a terminal screen with a blinking cursor and scrolling code"
+      - from: terminal
+        to: flame
+        prompt: "the terminal screen glitches and ignites, pixels becoming dancing fire"
+      - from: flame
+        to: heart
+        prompt: "the flames compress and reshape into a glowing heart, the fire of the heart"
+
+  journey_napkin_to_production:
+    label: "Napkin to Production"
+    description: "Sketch to code to deploy to shipped product"
+    steps:
+      - from: liquid
+        to: book
+        prompt: "liquid gold transforms into a crumpled napkin with rough sketch marks"
+      - from: book
+        to: braces
+        prompt: "the napkin sketch dissolves into clean curly braces, structured code emerging"
+      - from: braces
+        to: terminal
+        prompt: "the code compiles into a terminal with a deployment command running"
+      - from: terminal
+        to: star
+        prompt: "the terminal output transforms into a shining star, the deployed product"
+
+  journey_metamorphosis:
+    label: "Metamorphosis"
+    description: "Seed to flower to butterfly to swan to phoenix -- nature ascending"
+    steps:
+      - from: liquid
+        to: seed
+        prompt: "liquid gold transforms into a seed sprouting with a small stem"
+      - from: seed
+        to: lotus
+        prompt: "the seed grows rapidly into a full lotus flower with layered petals"
+      - from: lotus
+        to: butterfly
+        prompt: "the lotus petals detach and reform into butterfly wings, taking flight"
+      - from: butterfly
+        to: swan
+        prompt: "the butterfly grows larger, wings reshaping into the elegant form of a swan"
+      - from: swan
+        to: phoenix
+        prompt: "the swan ignites, transforming into a phoenix with flaming wings spread wide"
+
+# ──────────────────────────────────────────────────────────────
+# Cycles: full loops (liquid -> shape -> liquid)
+# Forward reuses existing single transform; reverse is generated.
+# Creates seamless looping GIFs.
+# ──────────────────────────────────────────────────────────────
+
+cycles:
+  cycle_flame:
+    shape: flame
+    label: "Flame Cycle"
+    description: "Solve et coagula -- the eternal fire"
+    forward_prompt: "liquid gold transforms into a dancing flame"
+    reverse_prompt: "a flame dissolves and melts back into a pool of liquid gold"
+
+  cycle_ouroboros:
+    shape: ouroboros
+    label: "Ouroboros Cycle"
+    description: "The serpent that devours itself, endlessly"
+    forward_prompt: "liquid gold transforms into an ouroboros serpent eating its own tail"
+    reverse_prompt: "ouroboros serpent uncoils and dissolves back into liquid gold"
+
+  cycle_caduceus:
+    shape: caduceus
+    label: "Caduceus Cycle"
+    description: "The messenger arrives and departs"
+    forward_prompt: "liquid gold transforms into the caduceus staff with serpents and wings"
+    reverse_prompt: "caduceus staff melts and dissolves back into a pool of liquid gold"

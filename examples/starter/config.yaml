@@ -1,0 +1,48 @@
+# Starter Example — Pixel Art Pipeline
+# Cost: ~$0.80 for singles, ~$0.48 for emotes, ~$0.32 for chain, ~$0.16 for cycle
+# Total: ~$1.76
+
+project:
+  name: "starter"
+  reference: "reference.png"
+  output_dir: "./output"
+  frame_size: 64
+  upscale_size: 512
+  frame_duration_ms: 200
+
+singles:
+  flame:
+    prompt: "golden circle transforms into a dancing flame with a pointed tip"
+  star:
+    prompt: "golden circle transforms into a twinkling five-pointed star"
+  heart:
+    prompt: "golden circle transforms into a glowing heart shape"
+  sword:
+    prompt: "golden circle transforms into a pixel art sword standing upright"
+  crown:
+    prompt: "golden circle transforms into a royal crown with five pointed tips"
+
+emotes:
+  flame:
+    prompt: "a golden flame sways gently left and right, subtle idle animation"
+  star:
+    prompt: "a golden star twinkles, its points glowing brighter then dimmer"
+  heart:
+    prompt: "a golden heart pulses gently like a slow heartbeat"
+
+chains:
+  flame_to_heart:
+    label: "Fire to Love"
+    steps:
+      - from: reference
+        to: flame
+        prompt: "golden circle transforms into a dancing flame"
+      - from: flame
+        to: heart
+        prompt: "the flame softens and reshapes into a glowing heart"
+
+cycles:
+  cycle_flame:
+    shape: flame
+    forward_prompt: "golden circle transforms into a dancing flame"
+    reverse_prompt: "flame dissolves back into a golden circle"
