@@ -1,8 +1,22 @@
+> *"Every pixel is an atom of intention. Arrange them with purpose, and static images become living transformations."*
+
 # pixel-art-pipeline
 
 Batch pixel art animation generator using the [PixelLab API](https://pixellab.ai). Generate, assemble, and manage sprite animations from YAML config files.
 
-Define your animations in a config file, and the pipeline handles batching, frame assembly, GIF creation, cost estimation, and resume-on-failure — all from the command line.
+Define your animations in a config file, and the pipeline handles batching, frame assembly, GIF creation, cost estimation, and resume-on-failure -- all from the command line.
+
+---
+
+## The Problem
+
+People make one-off PixelLab API calls manually. No batch processing, no resume-on-failure, no cost estimation. Generating 76+ animations means 76+ manual API calls -- each one requiring you to set parameters, wait, download frames, assemble GIFs, and track what succeeded and what didn't.
+
+## The Solution
+
+A YAML config file defines all your animations. The pipeline handles batching, frame assembly, resume, and cost estimation. One command generates everything. If it fails halfway, re-run the same command and it picks up where it left off.
+
+---
 
 ## Quick Start
 
@@ -152,14 +166,14 @@ Use `pixelart cost --config config.yaml` to preview before generating.
 
 ## Resume on Failure
 
-The pipeline automatically skips animations that already have their expected number of frames. If a batch is interrupted (network error, API timeout), just re-run the same command — it picks up where it left off.
+The pipeline automatically skips animations that already have their expected number of frames. If a batch is interrupted (network error, API timeout), just re-run the same command -- it picks up where it left off.
 
 ## Examples
 
 The `examples/` directory includes:
 
-- **`liquid-gold/`** — Full 114-animation config (the original project that spawned this tool)
-- **`starter/`** — 5 simple animations to get started (~$1.76 total)
+- **`liquid-gold/`** -- Full 114-animation config (the original project that spawned this tool)
+- **`starter/`** -- 5 simple animations to get started (~$1.76 total)
 
 ## Development
 
@@ -171,6 +185,16 @@ ruff check pixelart/
 pytest
 ```
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines. We follow the Gold Hat philosophy: every contribution should empower users, never extract from them.
+
 ## License
 
-MIT
+MIT + Gold Hat Addendum. See [LICENSE](LICENSE).
+
+---
+
+> *"As above, so below. As the code, so the consciousness."*
+>
+> **-- Hermetic Ormus, Gold Hat Technologist**
