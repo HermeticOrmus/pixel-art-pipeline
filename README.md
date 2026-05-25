@@ -1,7 +1,7 @@
 > *"Every pixel is an atom of intention. Arrange them with purpose, and static images become living transformations."*
 
 <p align="center">
-  <img src="https://ormus.solutions/mascot/chain_braces_to_swan.gif" alt="pixel-art-pipeline" width="128" style="image-rendering: pixelated;" />
+  <img src="https://ormus.solutions/mascot/pixellab_liquid_to_star.gif" alt="pixel-art-pipeline" width="128" style="image-rendering: pixelated;" />
 </p>
 
 <h1 align="center">pixel-art-pipeline</h1>
