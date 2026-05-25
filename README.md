@@ -1,7 +1,23 @@
 > *"Every pixel is an atom of intention. Arrange them with purpose, and static images become living transformations."*
 
-# pixel-art-pipeline
+<p align="center">
+  <img src="https://ormus.solutions/mascot/chain_braces_to_swan.gif" alt="pixel-art-pipeline" width="128" style="image-rendering: pixelated;" />
+</p>
 
+<h1 align="center">pixel-art-pipeline</h1>
+
+<p align="center">
+  <em>Batch pixel art animation generator using PixelLab API. Generate, assemble, and manage sprite animations from YAML configs.</em>
+</p>
+
+<p align="center">
+  <a href="https://github.com/HermeticOrmus/pixel-art-pipeline/stargazers"><img src="https://img.shields.io/github/stars/HermeticOrmus/pixel-art-pipeline?style=flat-square&color=aa8142" alt="Stars" /></a>
+  <a href="https://github.com/HermeticOrmus/pixel-art-pipeline/blob/main/LICENSE"><img src="https://img.shields.io/github/license/HermeticOrmus/pixel-art-pipeline?style=flat-square&color=aa8142" alt="License" /></a>
+  <a href="https://github.com/HermeticOrmus/pixel-art-pipeline/commits"><img src="https://img.shields.io/github/last-commit/HermeticOrmus/pixel-art-pipeline?style=flat-square&color=aa8142" alt="Last Commit" /></a>
+  <img src="https://img.shields.io/badge/Claude_Code-aa8142?style=flat-square&logo=anthropic&logoColor=white" alt="Claude Code" />
+</p>
+
+---
 Batch pixel art animation generator using the [PixelLab API](https://pixellab.ai). Generate, assemble, and manage sprite animations from YAML config files.
 
 Define your animations in a config file, and the pipeline handles batching, frame assembly, GIF creation, cost estimation, and resume-on-failure -- all from the command line.
